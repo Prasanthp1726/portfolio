@@ -178,7 +178,7 @@ export default function Projects() {
         {/* CTA */}
         <div className="text-center mt-12">
           <a
-            href="https://github.com"
+            href="https://github.com/Prasanthp1726"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 px-8 py-3.5 rounded-full glass border border-indigo-500/40 text-indigo-300 hover:text-white font-semibold transition-all duration-300 hover:border-indigo-400 hover:scale-105"

@@ -27,8 +27,8 @@ export default function Contact() {
         </svg>
       ),
       label: "Email",
-      value: "prasanth@email.com",
-      href: "mailto:prasanth@email.com",
+      value: "prasanth1726p@gmail.com",
+      href: "mailto:prasanth1726p@gmail.com",
     },
     {
       icon: (
@@ -99,8 +99,8 @@ export default function Contact() {
               <h3 className="text-white font-bold mb-4">Follow Me</h3>
               <div className="flex gap-3">
                 {[
-                  { label: "GitHub", href: "https://github.com", color: "hover:bg-gray-700" },
-                  { label: "LinkedIn", href: "https://linkedin.com", color: "hover:bg-blue-700" },
+                  { label: "GitHub", href: "https://github.com/Prasanthp1726", color: "hover:bg-gray-700" },
+                  { label: "LinkedIn", href: "https://linkedin.com/in/prasanth-p", color: "hover:bg-blue-700" },
                   { label: "Twitter", href: "https://twitter.com", color: "hover:bg-sky-600" },
                 ].map((s) => (
                   <a
