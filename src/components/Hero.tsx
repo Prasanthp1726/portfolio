@@ -1,5 +1,6 @@
 "use client";
 import { useEffect, useRef } from "react";
+import Image from "next/image";
 
 export default function Hero() {
   const titleRef = useRef<HTMLHeadingElement>(null);
@@ -119,8 +120,8 @@ export default function Hero() {
             <div className="absolute inset-0 rounded-full border-2 border-dashed border-indigo-500/30 animate-spin" style={{ animationDuration: "20s" }} />
             <div className="absolute inset-4 rounded-full border border-indigo-500/20" />
             {/* Avatar circle */}
-            <div className="absolute inset-6 rounded-full bg-gradient-to-br from-indigo-600 via-purple-600 to-blue-500 flex items-center justify-center animate-float glow">
-              <span className="text-7xl sm:text-8xl font-bold text-white select-none">P</span>
+            <div className="absolute inset-6 rounded-full overflow-hidden animate-float glow">
+              <Image src="/prasanth.png" alt="Prasanth" fill className="object-cover object-top" />
             </div>
             {/* Floating badges */}
             <div className="absolute -top-2 -right-2 glass rounded-xl px-3 py-1.5 text-xs font-semibold text-indigo-300 border border-indigo-500/30 animate-bounce" style={{ animationDuration: "2s" }}>

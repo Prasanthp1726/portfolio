@@ -1,4 +1,5 @@
 "use client";
+import Image from "next/image";
 
 const stats = [
   { label: "Years Experience", value: "2+" },
@@ -26,8 +27,8 @@ export default function About() {
             <div className="relative w-72 sm:w-80">
               {/* Main card */}
               <div className="glass rounded-3xl p-8 text-center">
-                <div className="w-24 h-24 rounded-2xl bg-gradient-to-br from-indigo-600 to-purple-600 flex items-center justify-center mx-auto mb-6 glow">
-                  <span className="text-4xl font-bold text-white">P</span>
+                <div className="w-24 h-24 rounded-2xl overflow-hidden mx-auto mb-6 glow relative">
+                  <Image src="/prasanth.png" alt="Prasanth" fill className="object-cover object-top" />
                 </div>
                 <h3 className="text-xl font-bold text-white mb-1">Prasanth</h3>
                 <p className="text-indigo-400 text-sm font-medium mb-4">Full Stack Developer</p>
