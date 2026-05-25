@@ -23,7 +23,7 @@ export default function Contact() {
         from_email: form.email,
         subject: form.subject,
         message: form.message,
-        to_email: "prasanth1726p@gmail.com",
+        to_email: "prasanthp172001@gmail.com",
       }, PUBLIC_KEY);
       setStatus("success");
       setForm({ name: "", email: "", subject: "", message: "" });
@@ -42,8 +42,8 @@ export default function Contact() {
         </svg>
       ),
       label: "Email",
-      value: "prasanth1726p@gmail.com",
-      href: "mailto:prasanth1726p@gmail.com",
+      value: "prasanthp172001@gmail.com",
+      href: "mailto:prasanthp172001@gmail.com",
     },
     {
       icon: (

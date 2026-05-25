@@ -83,7 +83,7 @@ export default function About() {
               {[
                 { label: "Name", value: "Prasanth" },
                 { label: "Location", value: "India" },
-                { label: "Email", value: "prasanth1726p@gmail.com" },
+                { label: "Email", value: "prasanthp172001@gmail.com" },
                 { label: "Availability", value: "Open to Work" },
               ].map((item) => (
                 <div key={item.label} className="glass rounded-xl p-4">
