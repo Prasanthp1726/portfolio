@@ -1,13 +1,13 @@
 @import "tailwindcss";
 
 :root {
-  --background: #0f0f1a;
-  --foreground: #e2e8f0;
+  --background: #e8d5b7;
+  --foreground: #4a4a4a;
   --accent: #6366f1;
   --accent-light: #818cf8;
   --accent-glow: rgba(99, 102, 241, 0.3);
-  --card-bg: rgba(255, 255, 255, 0.05);
-  --border: rgba(255, 255, 255, 0.1);
+  --card-bg: rgba(0, 0, 0, 0.06);
+  --border: rgba(0, 0, 0, 0.12);
 }
 
 * {
@@ -21,12 +21,20 @@ body {
   overflow-x: hidden;
 }
 
+h1, h2, h3, h4, h5, h6 {
+  color: #3a3a3a;
+}
+
+p, span, label {
+  color: #5a5a5a;
+}
+
 /* Scrollbar */
 ::-webkit-scrollbar {
   width: 6px;
 }
 ::-webkit-scrollbar-track {
-  background: #0f0f1a;
+  background: #e8d5b7;
 }
 ::-webkit-scrollbar-thumb {
   background: #6366f1;
@@ -48,17 +56,17 @@ body {
 
 /* Glass card */
 .glass {
-  background: var(--card-bg);
-  border: 1px solid var(--border);
+  background: rgba(255, 248, 235, 0.6);
+  border: 1px solid rgba(0, 0, 0, 0.1);
   backdrop-filter: blur(12px);
 }
 
 /* Animated gradient background */
 .hero-bg {
-  background: radial-gradient(ellipse at 20% 50%, rgba(99,102,241,0.15) 0%, transparent 60%),
-              radial-gradient(ellipse at 80% 20%, rgba(167,139,250,0.1) 0%, transparent 60%),
-              radial-gradient(ellipse at 50% 80%, rgba(56,189,248,0.08) 0%, transparent 60%),
-              #0f0f1a;
+  background: radial-gradient(ellipse at 20% 50%, rgba(99,102,241,0.1) 0%, transparent 60%),
+              radial-gradient(ellipse at 80% 20%, rgba(167,139,250,0.08) 0%, transparent 60%),
+              radial-gradient(ellipse at 50% 80%, rgba(56,189,248,0.06) 0%, transparent 60%),
+              #e8d5b7;
 }
 
 /* Floating animation */
@@ -102,6 +110,6 @@ body {
 
 /* Particle dots */
 .dot-pattern {
-  background-image: radial-gradient(rgba(99,102,241,0.15) 1px, transparent 1px);
+  background-image: radial-gradient(rgba(99,102,241,0.12) 1px, transparent 1px);
   background-size: 30px 30px;
 }
