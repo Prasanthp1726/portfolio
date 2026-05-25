@@ -93,6 +93,7 @@ export default function About() {
               ))}
             </div>
 
+            {/* Download Resume - add resume.pdf to public folder to enable
             <a
               href="/resume.pdf"
               className="inline-flex items-center gap-2 mt-8 px-6 py-3 rounded-full bg-indigo-600 hover:bg-indigo-500 text-white font-semibold transition-all duration-300 hover:shadow-lg hover:shadow-indigo-500/30 hover:scale-105"
@@ -102,6 +103,7 @@ export default function About() {
               </svg>
               Download Resume
             </a>
+            */}
           </div>
         </div>
 

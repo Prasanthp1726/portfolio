@@ -9,8 +9,8 @@ const projects = [
     category: "Full Stack",
     gradient: "from-blue-500 to-cyan-500",
     emoji: "🛍️",
-    github: "https://github.com",
-    live: "https://example.com",
+    github: "https://github.com/Prasanthp1726",
+    live: "",
   },
   {
     title: "Task Management App",
@@ -19,8 +19,8 @@ const projects = [
     category: "Full Stack",
     gradient: "from-indigo-500 to-purple-500",
     emoji: "📋",
-    github: "https://github.com",
-    live: "https://example.com",
+    github: "https://github.com/Prasanthp1726",
+    live: "",
   },
   {
     title: "Portfolio Website",
@@ -29,8 +29,8 @@ const projects = [
     category: "Frontend",
     gradient: "from-purple-500 to-pink-500",
     emoji: "🎨",
-    github: "https://github.com",
-    live: "https://example.com",
+    github: "https://github.com/Prasanthp1726/portfolio",
+    live: "https://portfolio-ten-kappa-wsu52hht9b.vercel.app",
   },
   {
     title: "Weather Dashboard",
@@ -39,8 +39,8 @@ const projects = [
     category: "Frontend",
     gradient: "from-cyan-500 to-blue-500",
     emoji: "🌤️",
-    github: "https://github.com",
-    live: "https://example.com",
+    github: "https://github.com/Prasanthp1726",
+    live: "",
   },
   {
     title: "Blog REST API",
@@ -49,8 +49,8 @@ const projects = [
     category: "Backend",
     gradient: "from-green-500 to-emerald-500",
     emoji: "🔗",
-    github: "https://github.com",
-    live: "https://example.com",
+    github: "https://github.com/Prasanthp1726",
+    live: "",
   },
   {
     title: "Chat Application",
@@ -59,8 +59,8 @@ const projects = [
     category: "Full Stack",
     gradient: "from-orange-500 to-red-500",
     emoji: "💬",
-    github: "https://github.com",
-    live: "https://example.com",
+    github: "https://github.com/Prasanthp1726",
+    live: "",
   },
 ];
 
@@ -158,6 +158,7 @@ export default function Projects() {
                     </svg>
                     Code
                   </a>
+                  {project.live && (
                   <a
                     href={project.live}
                     target="_blank"
@@ -169,6 +170,7 @@ export default function Projects() {
                     </svg>
                     Live
                   </a>
+                  )}
                 </div>
               </div>
             </div>
