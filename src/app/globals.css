@@ -2,12 +2,12 @@
 
 :root {
   --background: #e8d5b7;
-  --foreground: #4a4a4a;
+  --foreground: #3a3a3a;
   --accent: #6366f1;
   --accent-light: #818cf8;
-  --accent-glow: rgba(99, 102, 241, 0.3);
-  --card-bg: rgba(0, 0, 0, 0.06);
-  --border: rgba(0, 0, 0, 0.12);
+  --accent-glow: rgba(99, 102, 241, 0.25);
+  --card-bg: rgba(255, 245, 225, 0.7);
+  --border: rgba(0, 0, 0, 0.1);
 }
 
 * {
@@ -21,29 +21,23 @@ body {
   overflow-x: hidden;
 }
 
-h1, h2, h3, h4, h5, h6 {
-  color: #3a3a3a;
-}
-
-p, span, label {
-  color: #5a5a5a;
-}
+/* Override ALL tailwind text colors for sandal theme */
+.text-white { color: #2a2a2a !important; }
+.text-gray-100 { color: #3a3a3a !important; }
+.text-gray-200 { color: #4a4a4a !important; }
+.text-gray-300 { color: #555555 !important; }
+.text-gray-400 { color: #666666 !important; }
+.text-gray-500 { color: #777777 !important; }
+.text-gray-600 { color: #888888 !important; }
 
 /* Scrollbar */
-::-webkit-scrollbar {
-  width: 6px;
-}
-::-webkit-scrollbar-track {
-  background: #e8d5b7;
-}
-::-webkit-scrollbar-thumb {
-  background: #6366f1;
-  border-radius: 3px;
-}
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: #e8d5b7; }
+::-webkit-scrollbar-thumb { background: #6366f1; border-radius: 3px; }
 
 /* Gradient text */
 .gradient-text {
-  background: linear-gradient(135deg, #6366f1 0%, #a78bfa 50%, #38bdf8 100%);
+  background: linear-gradient(135deg, #5254cc 0%, #8b6fd4 50%, #2a9fd6 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -51,22 +45,23 @@ p, span, label {
 
 /* Glow effect */
 .glow {
-  box-shadow: 0 0 30px var(--accent-glow), 0 0 60px rgba(99,102,241,0.1);
+  box-shadow: 0 0 30px var(--accent-glow), 0 0 60px rgba(99,102,241,0.08);
 }
 
 /* Glass card */
 .glass {
-  background: rgba(255, 248, 235, 0.6);
-  border: 1px solid rgba(0, 0, 0, 0.1);
+  background: rgba(255, 245, 220, 0.75);
+  border: 1px solid rgba(180, 150, 100, 0.25);
   backdrop-filter: blur(12px);
 }
 
 /* Animated gradient background */
 .hero-bg {
-  background: radial-gradient(ellipse at 20% 50%, rgba(99,102,241,0.1) 0%, transparent 60%),
-              radial-gradient(ellipse at 80% 20%, rgba(167,139,250,0.08) 0%, transparent 60%),
-              radial-gradient(ellipse at 50% 80%, rgba(56,189,248,0.06) 0%, transparent 60%),
-              #e8d5b7;
+  background:
+    radial-gradient(ellipse at 20% 50%, rgba(99,102,241,0.08) 0%, transparent 60%),
+    radial-gradient(ellipse at 80% 20%, rgba(167,139,250,0.06) 0%, transparent 60%),
+    radial-gradient(ellipse at 50% 80%, rgba(56,189,248,0.05) 0%, transparent 60%),
+    #e8d5b7;
 }
 
 /* Floating animation */
@@ -76,19 +71,13 @@ p, span, label {
 }
 
 @keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
 @keyframes pulse-glow {
-  0%, 100% { box-shadow: 0 0 20px rgba(99,102,241,0.3); }
-  50% { box-shadow: 0 0 40px rgba(99,102,241,0.6); }
+  0%, 100% { box-shadow: 0 0 20px rgba(99,102,241,0.2); }
+  50% { box-shadow: 0 0 40px rgba(99,102,241,0.4); }
 }
 
 @keyframes spin-slow {
@@ -96,20 +85,28 @@ p, span, label {
   to { transform: rotate(360deg); }
 }
 
-.animate-float {
-  animation: float 3s ease-in-out infinite;
-}
-
-.animate-fade-in-up {
-  animation: fadeInUp 0.6s ease-out forwards;
-}
-
-.animate-pulse-glow {
-  animation: pulse-glow 2s ease-in-out infinite;
-}
+.animate-float { animation: float 3s ease-in-out infinite; }
+.animate-fade-in-up { animation: fadeInUp 0.6s ease-out forwards; }
+.animate-pulse-glow { animation: pulse-glow 2s ease-in-out infinite; }
 
 /* Particle dots */
 .dot-pattern {
-  background-image: radial-gradient(rgba(99,102,241,0.12) 1px, transparent 1px);
+  background-image: radial-gradient(rgba(99,102,241,0.1) 1px, transparent 1px);
   background-size: 30px 30px;
+}
+
+/* Navbar sandal bg */
+nav.glass {
+  background: rgba(232, 213, 183, 0.9) !important;
+}
+
+/* Input fields */
+input, textarea {
+  background: rgba(255, 245, 220, 0.8) !important;
+  color: #3a3a3a !important;
+  border-color: rgba(180, 150, 100, 0.3) !important;
+}
+
+input::placeholder, textarea::placeholder {
+  color: #999 !important;
 }
