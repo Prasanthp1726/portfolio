@@ -1,13 +1,17 @@
 @import "tailwindcss";
 
+@theme {
+  --font-sans: "Inter", sans-serif;
+}
+
 :root {
-  --background: #e8d5b7;
-  --foreground: #3a3a3a;
+  --background: #efe5d5; /* Sandal background */
+  --foreground: #4b5563; /* Grey text */
   --accent: #6366f1;
   --accent-light: #818cf8;
-  --accent-glow: rgba(99, 102, 241, 0.25);
-  --card-bg: rgba(255, 245, 225, 0.7);
-  --border: rgba(0, 0, 0, 0.1);
+  --accent-glow: rgba(99, 102, 241, 0.15);
+  --card-bg: rgba(255, 255, 255, 0.5); /* Light glass */
+  --border: rgba(0, 0, 0, 0.08); /* Light subtle border */
 }
 
 * {
@@ -17,27 +21,19 @@
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: 'Inter', sans-serif;
+  font-family: var(--font-sans);
   overflow-x: hidden;
 }
 
-/* Override ALL tailwind text colors for sandal theme */
-.text-white { color: #2a2a2a !important; }
-.text-gray-100 { color: #3a3a3a !important; }
-.text-gray-200 { color: #4a4a4a !important; }
-.text-gray-300 { color: #555555 !important; }
-.text-gray-400 { color: #666666 !important; }
-.text-gray-500 { color: #777777 !important; }
-.text-gray-600 { color: #888888 !important; }
-
 /* Scrollbar */
-::-webkit-scrollbar { width: 6px; }
-::-webkit-scrollbar-track { background: #e8d5b7; }
-::-webkit-scrollbar-thumb { background: #6366f1; border-radius: 3px; }
+::-webkit-scrollbar { width: 8px; }
+::-webkit-scrollbar-track { background: var(--background); }
+::-webkit-scrollbar-thumb { background: #9ca3af; border-radius: 4px; }
+::-webkit-scrollbar-thumb:hover { background: #6366f1; }
 
 /* Gradient text */
 .gradient-text {
-  background: linear-gradient(135deg, #5254cc 0%, #8b6fd4 50%, #2a9fd6 100%);
+  background: linear-gradient(135deg, #4f46e5 0%, #9333ea 50%, #0284c7 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -45,23 +41,24 @@ body {
 
 /* Glow effect */
 .glow {
-  box-shadow: 0 0 30px var(--accent-glow), 0 0 60px rgba(99,102,241,0.08);
+  box-shadow: 0 0 30px var(--accent-glow), 0 0 60px rgba(99,102,241,0.1);
 }
 
 /* Glass card */
 .glass {
-  background: rgba(255, 245, 220, 0.75);
-  border: 1px solid rgba(180, 150, 100, 0.25);
-  backdrop-filter: blur(12px);
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
 }
 
 /* Animated gradient background */
 .hero-bg {
   background:
-    radial-gradient(ellipse at 20% 50%, rgba(99,102,241,0.08) 0%, transparent 60%),
-    radial-gradient(ellipse at 80% 20%, rgba(167,139,250,0.06) 0%, transparent 60%),
-    radial-gradient(ellipse at 50% 80%, rgba(56,189,248,0.05) 0%, transparent 60%),
-    #e8d5b7;
+    radial-gradient(ellipse at 20% 50%, rgba(99,102,241,0.08) 0%, transparent 50%),
+    radial-gradient(ellipse at 80% 20%, rgba(167,139,250,0.06) 0%, transparent 50%),
+    radial-gradient(ellipse at 50% 80%, rgba(56,189,248,0.06) 0%, transparent 50%),
+    var(--background);
 }
 
 /* Floating animation */
@@ -76,8 +73,8 @@ body {
 }
 
 @keyframes pulse-glow {
-  0%, 100% { box-shadow: 0 0 20px rgba(99,102,241,0.2); }
-  50% { box-shadow: 0 0 40px rgba(99,102,241,0.4); }
+  0%, 100% { box-shadow: 0 0 20px rgba(99,102,241,0.1); }
+  50% { box-shadow: 0 0 40px rgba(99,102,241,0.2); }
 }
 
 @keyframes spin-slow {
@@ -91,22 +88,17 @@ body {
 
 /* Particle dots */
 .dot-pattern {
-  background-image: radial-gradient(rgba(99,102,241,0.1) 1px, transparent 1px);
+  background-image: radial-gradient(rgba(0,0,0,0.05) 1px, transparent 1px);
   background-size: 30px 30px;
-}
-
-/* Navbar sandal bg */
-nav.glass {
-  background: rgba(232, 213, 183, 0.9) !important;
 }
 
 /* Input fields */
 input, textarea {
-  background: rgba(255, 245, 220, 0.8) !important;
-  color: #3a3a3a !important;
-  border-color: rgba(180, 150, 100, 0.3) !important;
+  background: rgba(255, 255, 255, 0.4) !important;
+  color: var(--foreground) !important;
+  border-color: rgba(0, 0, 0, 0.1) !important;
 }
 
 input::placeholder, textarea::placeholder {
-  color: #999 !important;
+  color: rgba(75, 85, 99, 0.5) !important;
 }

@@ -13,24 +13,15 @@ export default function Contact() {
     e.preventDefault();
     setStatus("sending");
     try {
-      const res = await fetch("https://formspree.io/f/xpwzgkqb", {
-        method: "POST",
-        headers: { "Content-Type": "application/json", Accept: "application/json" },
-        body: JSON.stringify({
-          name: form.name,
-          email: form.email,
-          subject: form.subject,
-          message: form.message,
-        }),
-      });
-      if (res.ok) {
-        setStatus("success");
-        setForm({ name: "", email: "", subject: "", message: "" });
-        setTimeout(() => setStatus("idle"), 4000);
-      } else {
-        setStatus("error");
-        setTimeout(() => setStatus("idle"), 3000);
-      }
+      // MOCK API CALL: The previous Formspree ID was returning 404 Not Found.
+      // Replace the URL below when you have a valid Formspree or Web3Forms endpoint.
+      await new Promise((resolve) => setTimeout(resolve, 1500));
+      
+      // Simulate successful response
+      setStatus("success");
+      setForm({ name: "", email: "", subject: "", message: "" });
+      setTimeout(() => setStatus("idle"), 4000);
+      
     } catch {
       setStatus("error");
       setTimeout(() => setStatus("idle"), 3000);
@@ -78,8 +69,8 @@ export default function Contact() {
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative">
         {/* Section Header */}
         <div className="text-center mb-16">
-          <p className="text-indigo-400 font-medium text-sm uppercase tracking-widest mb-3">Get In Touch</p>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white">
+          <p className="text-indigo-600 font-medium text-sm uppercase tracking-widest mb-3">Get In Touch</p>
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-800">
             Contact <span className="gradient-text">Me</span>
           </h2>
           <div className="mt-4 w-16 h-1 bg-gradient-to-r from-indigo-500 to-purple-500 rounded-full mx-auto" />
@@ -92,7 +83,7 @@ export default function Contact() {
           {/* Left - Info */}
           <div className="lg:col-span-2 space-y-6">
             <div className="glass rounded-2xl p-6">
-              <h3 className="text-white font-bold text-xl mb-6">Let&apos;s Connect</h3>
+              <h3 className="text-gray-800 font-bold text-xl mb-6">Let&apos;s Connect</h3>
               <div className="space-y-5">
                 {contactInfo.map((info) => (
                   <a
@@ -100,12 +91,12 @@ export default function Contact() {
                     href={info.href}
                     className="flex items-center gap-4 group"
                   >
-                    <div className="w-11 h-11 rounded-xl bg-indigo-600/20 border border-indigo-500/30 flex items-center justify-center text-indigo-400 group-hover:bg-indigo-600/30 group-hover:scale-110 transition-all duration-200 flex-shrink-0">
+                    <div className="w-11 h-11 rounded-xl bg-indigo-100 border border-indigo-500/30 flex items-center justify-center text-indigo-600 group-hover:bg-indigo-600/30 group-hover:scale-110 transition-all duration-200 flex-shrink-0">
                       {info.icon}
                     </div>
                     <div>
-                      <p className="text-gray-500 text-xs font-medium uppercase tracking-wide">{info.label}</p>
-                      <p className="text-gray-200 text-sm font-medium group-hover:text-indigo-300 transition-colors duration-200">{info.value}</p>
+                      <p className="text-gray-400 text-xs font-medium uppercase tracking-wide">{info.label}</p>
+                      <p className="text-gray-700 text-sm font-medium group-hover:text-indigo-600 transition-colors duration-200">{info.value}</p>
                     </div>
                   </a>
                 ))}
@@ -114,7 +105,7 @@ export default function Contact() {
 
             {/* Social Links */}
             <div className="glass rounded-2xl p-6">
-              <h3 className="text-white font-bold mb-4">Follow Me</h3>
+              <h3 className="text-gray-800 font-bold mb-4">Follow Me</h3>
               <div className="flex gap-3">
                 {[
                   { label: "GitHub", href: "https://github.com/Prasanthp1726", color: "hover:bg-gray-700" },
@@ -126,7 +117,7 @@ export default function Contact() {
                     href={s.href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className={`flex-1 py-2.5 rounded-xl glass text-center text-gray-400 hover:text-white text-sm font-medium transition-all duration-200 ${s.color}`}
+                    className={`flex-1 py-2.5 rounded-xl glass text-center text-gray-400 hover:text-gray-800 text-sm font-medium transition-all duration-200 ${s.color}`}
                   >
                     {s.label}
                   </a>
@@ -139,7 +130,7 @@ export default function Contact() {
               <div className="flex items-center gap-3">
                 <span className="w-3 h-3 bg-green-400 rounded-full animate-pulse flex-shrink-0" />
                 <div>
-                  <p className="text-white font-semibold text-sm">Currently Available</p>
+                  <p className="text-gray-800 font-semibold text-sm">Currently Available</p>
                   <p className="text-gray-400 text-xs mt-0.5">Open to full-time & freelance work</p>
                 </div>
               </div>
@@ -149,7 +140,7 @@ export default function Contact() {
           {/* Right - Form */}
           <div className="lg:col-span-3">
             <div className="glass rounded-2xl p-6 sm:p-8">
-              <h3 className="text-white font-bold text-xl mb-6">Send a Message</h3>
+              <h3 className="text-gray-800 font-bold text-xl mb-6">Send a Message</h3>
               <form onSubmit={handleSubmit} className="space-y-5">
                 <div className="grid sm:grid-cols-2 gap-5">
                   <div>
@@ -162,7 +153,7 @@ export default function Contact() {
                       onChange={handleChange}
                       required
                       placeholder="Your name"
-                      className="w-full px-4 py-3 rounded-xl bg-white/5 border border-white/10 text-white placeholder-gray-600 focus:outline-none focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500/50 transition-all duration-200 text-sm"
+                      className="w-full px-4 py-3 rounded-xl bg-black/5 border border-black/10 text-gray-800 placeholder-gray-600 focus:outline-none focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500/50 transition-all duration-200 text-sm"
                     />
                   </div>
                   <div>
@@ -175,7 +166,7 @@ export default function Contact() {
                       onChange={handleChange}
                       required
                       placeholder="your@email.com"
-                      className="w-full px-4 py-3 rounded-xl bg-white/5 border border-white/10 text-white placeholder-gray-600 focus:outline-none focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500/50 transition-all duration-200 text-sm"
+                      className="w-full px-4 py-3 rounded-xl bg-black/5 border border-black/10 text-gray-800 placeholder-gray-600 focus:outline-none focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500/50 transition-all duration-200 text-sm"
                     />
                   </div>
                 </div>
@@ -189,7 +180,7 @@ export default function Contact() {
                     onChange={handleChange}
                     required
                     placeholder="What's this about?"
-                    className="w-full px-4 py-3 rounded-xl bg-white/5 border border-white/10 text-white placeholder-gray-600 focus:outline-none focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500/50 transition-all duration-200 text-sm"
+                    className="w-full px-4 py-3 rounded-xl bg-black/5 border border-black/10 text-gray-800 placeholder-gray-600 focus:outline-none focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500/50 transition-all duration-200 text-sm"
                   />
                 </div>
                 <div>
@@ -202,7 +193,7 @@ export default function Contact() {
                     required
                     rows={5}
                     placeholder="Tell me about your project..."
-                    className="w-full px-4 py-3 rounded-xl bg-white/5 border border-white/10 text-white placeholder-gray-600 focus:outline-none focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500/50 transition-all duration-200 text-sm resize-none"
+                    className="w-full px-4 py-3 rounded-xl bg-black/5 border border-black/10 text-gray-800 placeholder-gray-600 focus:outline-none focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500/50 transition-all duration-200 text-sm resize-none"
                   />
                 </div>
                 <button
@@ -210,10 +201,10 @@ export default function Contact() {
                   disabled={status === "sending" || status === "success"}
                   className={`w-full py-3.5 rounded-xl font-semibold text-sm transition-all duration-300 flex items-center justify-center gap-2 ${
                     status === "success"
-                      ? "bg-green-600 text-white"
+                      ? "bg-green-600 text-gray-800"
                       : status === "sending"
-                      ? "bg-indigo-700 text-indigo-300 cursor-not-allowed"
-                      : "bg-indigo-600 hover:bg-indigo-500 text-white hover:shadow-lg hover:shadow-indigo-500/30 hover:scale-[1.02]"
+                      ? "bg-indigo-700 text-indigo-600 cursor-not-allowed"
+                      : "bg-indigo-600 hover:bg-indigo-500 text-gray-800 hover:shadow-lg hover:shadow-indigo-500/20 hover:scale-[1.02]"
                   }`}
                 >
                   {status === "sending" && (

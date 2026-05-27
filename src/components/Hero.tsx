@@ -33,7 +33,7 @@ export default function Hero() {
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-20 flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
         {/* Text Content */}
         <div className="flex-1 text-center lg:text-left">
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass text-indigo-400 text-sm font-medium mb-6">
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass text-indigo-600 text-sm font-medium mb-6">
             <span className="w-2 h-2 bg-green-400 rounded-full animate-pulse" />
             Available for work
           </div>
@@ -43,7 +43,7 @@ export default function Hero() {
             <span className="gradient-text">Prasanth</span>
           </h1>
 
-          <h2 className="text-xl sm:text-2xl lg:text-3xl font-semibold text-gray-300 mb-6">
+          <h2 className="text-xl sm:text-2xl lg:text-3xl font-semibold text-gray-600 mb-6">
             Full Stack Developer
           </h2>
 
@@ -55,13 +55,13 @@ export default function Hero() {
           <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
             <button
               onClick={() => handleScroll("projects")}
-              className="px-8 py-3.5 rounded-full bg-indigo-600 hover:bg-indigo-500 text-white font-semibold transition-all duration-300 hover:shadow-xl hover:shadow-indigo-500/30 hover:scale-105"
+              className="px-8 py-3.5 rounded-full bg-indigo-600 hover:bg-indigo-500 text-gray-800 font-semibold transition-all duration-300 hover:shadow-xl hover:shadow-indigo-500/20 hover:scale-105"
             >
               View My Work
             </button>
             <button
               onClick={() => handleScroll("contact")}
-              className="px-8 py-3.5 rounded-full glass border border-indigo-500/40 text-indigo-300 hover:text-white font-semibold transition-all duration-300 hover:border-indigo-400 hover:scale-105"
+              className="px-8 py-3.5 rounded-full glass border border-indigo-500/40 text-indigo-600 hover:text-gray-800 font-semibold transition-all duration-300 hover:border-indigo-400 hover:scale-105"
             >
               Contact Me
             </button>
@@ -69,7 +69,7 @@ export default function Hero() {
 
           {/* Social Links */}
           <div className="flex items-center gap-5 mt-10 justify-center lg:justify-start">
-            <span className="text-gray-500 text-sm">Find me on</span>
+            <span className="text-gray-400 text-sm">Find me on</span>
             {[
               {
                 label: "GitHub",
@@ -105,7 +105,7 @@ export default function Hero() {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label={social.label}
-                className="w-10 h-10 rounded-full glass flex items-center justify-center text-gray-400 hover:text-indigo-400 hover:border-indigo-500/50 transition-all duration-200 hover:scale-110"
+                className="w-10 h-10 rounded-full glass flex items-center justify-center text-gray-400 hover:text-indigo-600 hover:border-indigo-500/50 transition-all duration-200 hover:scale-110"
               >
                 {social.icon}
               </a>
@@ -118,13 +118,13 @@ export default function Hero() {
           <div className="relative w-64 h-64 sm:w-72 sm:h-72 lg:w-80 lg:h-80">
             {/* Rotating ring */}
             <div className="absolute inset-0 rounded-full border-2 border-dashed border-indigo-500/30 animate-spin" style={{ animationDuration: "20s" }} />
-            <div className="absolute inset-4 rounded-full border border-indigo-500/20" />
+            <div className="absolute inset-4 rounded-full border border-indigo-500/30" />
             {/* Avatar circle */}
             <div className="absolute inset-6 rounded-full overflow-hidden animate-float glow">
               <Image src="/prasanth.png" alt="Prasanth" fill className="object-cover object-top" />
             </div>
             {/* Floating badges */}
-            <div className="absolute -top-2 -right-2 glass rounded-xl px-3 py-1.5 text-xs font-semibold text-indigo-300 border border-indigo-500/30 animate-bounce" style={{ animationDuration: "2s" }}>
+            <div className="absolute -top-2 -right-2 glass rounded-xl px-3 py-1.5 text-xs font-semibold text-indigo-600 border border-indigo-500/30 animate-bounce" style={{ animationDuration: "2s" }}>
               React ⚛️
             </div>
             <div className="absolute -bottom-2 -left-2 glass rounded-xl px-3 py-1.5 text-xs font-semibold text-purple-300 border border-purple-500/30 animate-bounce" style={{ animationDuration: "2.5s" }}>
@@ -135,7 +135,7 @@ export default function Hero() {
       </div>
 
       {/* Scroll Indicator */}
-      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-gray-500">
+      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-gray-400">
         <span className="text-xs">Scroll down</span>
         <div className="w-5 h-9 rounded-full border border-gray-600 flex items-start justify-center p-1">
           <div className="w-1 h-2 bg-indigo-400 rounded-full animate-bounce" />

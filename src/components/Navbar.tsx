@@ -50,9 +50,14 @@ export default function Navbar() {
           <a
             href="#home"
             onClick={() => handleNavClick("#home")}
-            className="text-xl font-bold gradient-text cursor-pointer"
+            className="text-2xl font-black tracking-tighter flex items-center gap-2.5 cursor-pointer group"
           >
-            &lt;Prasanth /&gt;
+            <div className="w-9 h-9 rounded-xl bg-gradient-to-br from-indigo-500 via-purple-500 to-pink-500 flex items-center justify-center text-white font-bold shadow-lg shadow-indigo-500/20 group-hover:scale-110 group-hover:rotate-3 transition-all duration-300">
+              P
+            </div>
+            <span className="text-gray-800">
+              Prasanth<span className="text-indigo-500">.</span>
+            </span>
           </a>
 
           {/* Desktop Nav */}
@@ -61,10 +66,10 @@ export default function Navbar() {
               <button
                 key={link.href}
                 onClick={() => handleNavClick(link.href)}
-                className={`text-sm font-medium transition-all duration-200 hover:text-indigo-400 relative group ${
+                className={`text-sm font-medium transition-all duration-200 hover:text-indigo-600 relative group ${
                   activeSection === link.href.replace("#", "")
-                    ? "text-indigo-400"
-                    : "text-gray-300"
+                    ? "text-indigo-600"
+                    : "text-gray-600"
                 }`}
               >
                 {link.label}
@@ -80,7 +85,7 @@ export default function Navbar() {
             <a
               href="#contact"
               onClick={() => handleNavClick("#contact")}
-              className="px-5 py-2 rounded-full bg-indigo-600 hover:bg-indigo-500 text-white text-sm font-medium transition-all duration-200 hover:shadow-lg hover:shadow-indigo-500/30 animate-pulse-glow cursor-pointer"
+              className="px-5 py-2 rounded-full bg-indigo-600 hover:bg-indigo-500 text-gray-800 text-sm font-medium transition-all duration-200 hover:shadow-lg hover:shadow-indigo-500/20 animate-pulse-glow cursor-pointer"
             >
               Hire Me
             </a>
@@ -124,8 +129,8 @@ export default function Navbar() {
                 onClick={() => handleNavClick(link.href)}
                 className={`text-left px-4 py-2.5 rounded-xl text-sm font-medium transition-all duration-200 ${
                   activeSection === link.href.replace("#", "")
-                    ? "bg-indigo-600/20 text-indigo-400"
-                    : "text-gray-300 hover:bg-white/5 hover:text-white"
+                    ? "bg-indigo-100 text-indigo-600"
+                    : "text-gray-600 hover:bg-black/5 hover:text-gray-800"
                 }`}
               >
                 {link.label}
@@ -133,7 +138,7 @@ export default function Navbar() {
             ))}
             <button
               onClick={() => handleNavClick("#contact")}
-              className="mt-2 px-4 py-2.5 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white text-sm font-medium transition-all duration-200 text-center"
+              className="mt-2 px-4 py-2.5 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-gray-800 text-sm font-medium transition-all duration-200 text-center"
             >
               Hire Me
             </button>
