@@ -96,7 +96,7 @@ export default function Contact() {
                     </div>
                     <div>
                       <p className="text-gray-400 text-xs font-medium uppercase tracking-wide">{info.label}</p>
-                      <p className="text-gray-700 text-sm font-medium group-hover:text-indigo-600 transition-colors duration-200">{info.value}</p>
+                      <p className="text-gray-700 text-sm font-medium group-hover:text-indigo-600 transition-colors duration-200 break-all">{info.value}</p>
                     </div>
                   </a>
                 ))}
